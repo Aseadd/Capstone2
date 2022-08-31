@@ -7,7 +7,11 @@
 body {
   background: url(./images/back.jpg);
   background-size: 100%;
-  font-family: 'Poppins', sans-serif;;
+  font-family: 'Poppins', sans-serif;
+}
+
+h5 {
+  font-size: 1rem;
 }
 
 .nav-bar {
@@ -18,11 +22,19 @@ li {
   font-size: 20px;
 }
 
-footer {
-  margin-top: 83vh;
-}
-
 .logo-img {
   width: 100px;
   height: 40px;
+}
+
+.title-like {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  gap: 5px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.card {
+  background: #da4167;
 }
