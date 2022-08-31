@@ -7,7 +7,7 @@ const displayDom = async (url) => {
   console.log(meals);
 
   let mealsHtml = '';
-  for (let i = 0; i < meals.meals.length; i = i + 1) {
+  for (let i = 0; i < meals.meals.length; i += 1) {
     mealsHtml += ` <div class = 'col mt-4 pe-0'>
                     <div class="card" style="width: 20rem;">
                     <img src="${meals.meals[i].strMealThumb}" class="card-img-top" alt="...">

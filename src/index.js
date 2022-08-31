@@ -1,5 +1,4 @@
 // import _ from 'lodash';
-import { isMatch } from 'lodash';
 import './style.css';
 import displayDom from './module/displayDom.js';
 
