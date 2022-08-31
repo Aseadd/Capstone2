@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MarcoOquendoC/Webpack.git"
+    "url": "git+https://github.com/Aseadd/Capstone2.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MarcoOquendoC/Webpack/issues"
+    "url": "https://github.com/Aseadd/Capstone2/issues"
   },
-  "homepage": "https://github.com/MarcoOquendoC/Webpack#readme",
+  "homepage": "https://github.com/Aseadd/Capstone2#readme",
   "devDependencies": {
     "@babel/core": "^7.18.13",
     "@babel/preset-env": "^7.18.10",
