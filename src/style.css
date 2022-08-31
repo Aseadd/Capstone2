@@ -3,3 +3,21 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background: url(./images/back.jpg);
+  background-size: 100%;
+}
+
+.nav-bar {
+  background: #235789;
+}
+
+footer {
+  margin-top: 83vh;
+}
+
+.logo-img {
+  width: 100px;
+  height: 40px;
+}
