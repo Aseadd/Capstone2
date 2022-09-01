@@ -24,7 +24,7 @@ const displayDom = async (url) => {
           <img src="${meals.meals[i].strMealThumb}" class="card-img-top img" alt="...">
           <div class="card-body text-black ">
             <div class="title-like">
-              <h5 class="card-title"> ${meals.meals[i].strMeal}</h5>
+              <h2 class="card-title"> ${meals.meals[i].strMeal}</h2>
               <span id="like${idMeal}" class="ms-4 like">ღ  ${likes}</span>
             </div>
             <p class="card-text"> ${meals.meals[i].strCategory}</p>
