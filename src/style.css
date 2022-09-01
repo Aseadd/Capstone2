@@ -64,3 +64,11 @@ li {
 .modal-footer {
   padding-right: 0;
 }
+
+.like {
+  cursor: pointer;
+}
+
+.like:active {
+  color: red;
+}
