@@ -3,7 +3,7 @@ import likesApi from './likesApi.js';
 
 const displayDom = async (url) => {
   const result = document.querySelector('.row');
-  const imgBackColor = document.querySelector('.img');
+  // const imgBackColor = document.querySelector('.img');
   const meals = await getMeals(url);
   const allLikes = await likesApi.getAllLikes();
   // const mealList = JSON.parse(meals);
@@ -39,11 +39,6 @@ const displayDom = async (url) => {
   result.innerHTML = mealsHtml;
 
   const countMeals = document.querySelector('#count-likes');
-  const c = await likesApi.getTotalMealLikes();
-  const count = c.reduce(
-    (accumulator, current) => accumulator + current.likes,
-    0
-  );
   countMeals.textContent += '(' + meals.meals.length + ')';
 };
 

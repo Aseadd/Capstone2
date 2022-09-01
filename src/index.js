@@ -8,7 +8,6 @@ import commentApi from './module/commentApi';
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=a';
 displayDom(url);
 
-const submit = document.querySelector('#submit');
 const allCards = document.querySelector('#allCards');
 const likeSpan = document.querySelector('like');
 allCards.addEventListener('click', (e) => {
@@ -35,18 +34,11 @@ allCards.addEventListener('click', (e) => {
 
   if (text.trim() === 'Comment') {
     e.preventDefault();
-    const nameValue = document.getElementById('nameMealID').value;
-    const commentValue = document.getElementById('commentMealID').value;
+    let nameValue = document.getElementById('nameMealID').value;
+    let commentValue = document.getElementById('commentMealID').value;
     const idMeal = e.target.id;
     commentApi.addComments(idMeal, nameValue, commentValue);
     nameValue = '';
     commentValue = '';
   }
 });
-
-// submit.addEventListener('click', (e) => {
-//   const idMeal = e.target.id;
-//   commentApi.addComments(idMeal, nameValue, commentValue);
-//   nameValue = '';
-//   commentValue = '';
-// });

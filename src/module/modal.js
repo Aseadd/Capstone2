@@ -40,10 +40,10 @@ const modalMethods = {
   async showComment(id) {
     const commentList = document.querySelector('.commentSection');
     const allComments = await commentApi.getComments(id);
-    let commentHtml = '';
+    const commentHtml = '';
 
     for (let i = 0; i < allComments.length; i += 1) {
-      const { idMeal } = meals.meals[i];
+      const { idMeal } = id;
       const { comments } = allComments.filter(
         (e) => e.item_id === idMeal
       )[0] || {
