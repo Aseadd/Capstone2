@@ -1,3 +1,5 @@
+import commentApi from './commentApi.js';
+
 const modalMethods = {
   async show(id, src, mealName, category) {
     // const meals = await getMeals(url);
@@ -33,6 +35,23 @@ const modalMethods = {
       </div>
     `;
     modal.appendChild(allContent);
+  },
+
+  async showComment(id) {
+    const commentList = document.querySelector('.commentSection');
+    const allComments = await commentApi.getComments(id);
+    let commentHtml = '';
+
+    for (let i = 0; i < allComments.length; i += 1) {
+      const { idMeal } = meals.meals[i];
+      const { comments } = allComments.filter(
+        (e) => e.item_id === idMeal
+      )[0] || {
+        likes: 0,
+      };
+      commentHtml.innerHTML = ` <p><span class="badge rounded-pill bg-dark">Addis Tsega 21/08/2022:</span>${comments} </p>`;
+    }
+    commentList.appendChild(commentHtml);
   },
 };
 
