@@ -1,11 +1,13 @@
 const likesApi = {
   async getAllLikes() {
+    // eslint-disable-next-line
     const url =
       'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/MZ10RiH3HxYgVP46u10j/likes';
     const response = await fetch(url).then((response) => response.json());
     return response;
   },
   async getLikes(id) {
+    // eslint-disable-next-line
     const url =
       'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/MZ10RiH3HxYgVP46u10j/likes';
     const response = await fetch(url).then((response) => response.json());
@@ -13,6 +15,7 @@ const likesApi = {
     return likes;
   },
   async addLike(id) {
+    // eslint-disable-next-line
     const url =
       'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/MZ10RiH3HxYgVP46u10j/likes';
     const result = await fetch(url, {
@@ -26,6 +29,7 @@ const likesApi = {
     return response;
   },
   async recordLike(id) {
+    // eslint-disable-next-line
     const result = await fetch(
       'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/q2EecIDolyiDguQmkFIj/likes/',
       {
