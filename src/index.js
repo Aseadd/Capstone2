@@ -3,7 +3,7 @@ import './style.css';
 import displayDom from './module/displayDom.js';
 import modalMethods from './module/modal.js';
 import likesApi from './module/likesApi.js';
-import commentApi from './module/commentApi';
+import commentApi from './module/commentApi.js';
 
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=a';
 displayDom(url);
@@ -15,8 +15,7 @@ allCards.addEventListener('click', (e) => {
   if (text.trim() === 'Details') {
     const idMeal = e.target.id;
     const imgSrc = e.target.parentElement.parentElement.firstElementChild.src;
-    const title =
-      e.target.previousElementSibling.previousElementSibling.firstElementChild;
+    const title = e.target.previousElementSibling.previousElementSibling.firstElementChild;
     const category = e.target.previousElementSibling.textContent;
     modalMethods.show(idMeal, imgSrc, title.textContent, category);
     modalMethods.showComment(idMeal);

@@ -45,7 +45,7 @@ const modalMethods = {
     for (let i = 0; i < allComments.length; i += 1) {
       const { idMeal } = id;
       const { comments } = allComments.filter(
-        (e) => e.item_id === idMeal
+        (e) => e.item_id === idMeal,
       )[0] || {
         likes: 0,
       };
