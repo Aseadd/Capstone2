@@ -45,15 +45,15 @@
           </div>
           <div class="modal-body">
             <img src="https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg" class="img modalImg" alt="Meal Image">
-            <form action="#" method="post" class='score-form mt-2 modalForm'>
+            <form id="formIdNumber" method="get" class='modalForm mt-2'>
               <p>Your comment will be the number <span class="badge rounded-pill bg-info text-dark">32</span></p>
               <div class='justify-content-center input-group-sm'>
-                <input class="form-control formInput" type="text" placeholder="Your name" name="name" id="nameMealID">
-                <textarea class="form-control formInput mt-2" placeholder="Your comment" name="comment" id="commentMealID"></textarea>
+                <input class="form-control formInput" type="text" placeholder="Your name" name="name" id="nameMealID" required>
+                <textarea class="form-control formInput mt-2" placeholder="Your comment" name="comment" id="commentMealID" required></textarea>
               </div>
               <div class="modal-footer mt-2 ma-0">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <input type="button" value="Comment" class="submit score-btn btn btn-primary float-end" id="submit">
+                <input type="submit" value="Comment" class="submit btn btn-primary float-end" id="submit">
               </div>
             </form>
             <div class="commentSection">
