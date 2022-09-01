@@ -3,7 +3,7 @@ import './style.css';
 import displayDom from './module/displayDom.js';
 import modalMethods from './module/modal.js';
 import likesApi from './module/likesApi.js';
-import commentApi from './module/commentApi.js';
+// import commentApi from './module/commentApi.js';
 
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=a';
 displayDom(url);
@@ -26,18 +26,16 @@ allCards.addEventListener('click', (e) => {
     likesApi.addLike(idMeal);
     const span = document.getElementById(e.target.id);
     const likes = Number(span.textContent.slice(1)) + 1;
-    span.style.color = 'red';
     span.textContent = `ღ  ${likes}`;
+    span.style.color = 'red';
     likeSpan.classList.toggle('active');
   }
+});
 
-  if (text.trim() === 'Comment') {
-    e.preventDefault();
-    let nameValue = document.getElementById('nameMealID').value;
-    let commentValue = document.getElementById('commentMealID').value;
-    const idMeal = e.target.id;
-    commentApi.addComments(idMeal, nameValue, commentValue);
-    nameValue = '';
-    commentValue = '';
-  }
+const form = document.querySelector('form');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  console.log('hello');
+  console.log(e.target);
+  // commentsApi.addComments(id, nameValue, commentValue);
 });
