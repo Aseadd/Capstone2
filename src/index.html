@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -30,8 +31,40 @@
     </nav>
   </header>
   <main>
-    <div class='row '>
-    </div>
+    <h1>Choose the meal you like</h1>
+    <section id="allCards" class='row'>
+      <!-- Cards from javaScript -->
+    </section>
+    <section class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Apple Frangipan Tart</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg" class="img modalImg" alt="Meal Image">
+            <form action="#" method="post" class='score-form mt-2 modalForm'>
+              <h6>Please add Your Comment</h6>
+              <p>Your comment will be the number <span class="badge rounded-pill bg-info text-dark">32</span></p>
+              <div class='justify-content-center input-group-sm'>
+                <input class="form-control formInput" type="text" placeholder="Your name" name="name" id="nameMealID">
+                <textarea class="form-control formInput mt-2" placeholder="Your comment" name="comment" id="commentMealID"></textarea>
+              </div>
+              <div class="modal-footer mt-2 ma-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <input type="button" value="Comment" class="submit score-btn btn btn-primary float-end" id="submit">
+              </div>
+            </form>
+            <div class="commentSection">
+              <p><span class="badge rounded-pill bg-dark">Addis 21/08/2022:</span> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt fugit magnam laudantium perspiciatis impedit officiis! Modi quisquam ratione corrupti quaerat? Fugiat perspiciatis nulla cumque autem a nesciunt quidem placeat doloremque!</p>
+              <p><span class="badge rounded-pill bg-dark">Marco 21/08/2022:</span> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt fugit magnam laudantium perspiciatis impedit officiis! Modi quisquam ratione corrupti quaerat? Fugiat perspiciatis nulla cumque autem a nesciunt quidem placeat doloremque!</p>
+              <p><span class="badge rounded-pill bg-dark">Addis Tsega 21/08/2022:</span> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt fugit magnam laudantium perspiciatis impedit officiis! Modi quisquam ratione corrupti quaerat? Fugiat perspiciatis nulla cumque autem a nesciunt quidem placeat doloremque!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class='pt-2 pb-3 mt-3 nav-bar'>
     <span class='text-white text-center'>Copyright @2022</span>

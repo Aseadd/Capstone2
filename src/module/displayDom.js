@@ -1,28 +1,37 @@
 import getMeals from './mealApi.js';
+import likesApi from './likesApi.js';
 
 const displayDom = async (url) => {
   const result = document.querySelector('.row');
   const meals = await getMeals(url);
+  const allLikes = await likesApi.getAllLikes();
   // const mealList = JSON.parse(meals);
-  console.log(meals);
+  // console.log(meals);
 
   let mealsHtml = '';
   for (let i = 0; i < meals.meals.length; i += 1) {
-    mealsHtml += ` <div class = 'col mt-4 pe-0'>
-                    <div class="card" style="width: 20rem;">
-                    <img src="${meals.meals[i].strMealThumb}" class="card-img-top img" alt="...">
-                    <div class="card-body text-black ">
-                     <div class = "title-like"> 
-                     <h5 class="card-title"> ${meals.meals[i].strMeal}</h5>
-                     <span id="like${meals.meals[i].idMeal}" class="ms-4 like">🖤</span>
-                     </div>
-                      <p class="card-text"> ${meals.meals[i].strCategory}</p>
-                     <a href="#" class="btn btn-primary">Comment</a>
-                    </div>
-                </div>
-              </div>`;
-    result.innerHTML = mealsHtml;
+    const { idMeal } = meals.meals[i];
+    const { likes } = allLikes.filter((e) => e.item_id === idMeal)[0] || { likes: 0 };
+    mealsHtml
+    += ` 
+      <div class='col mt-4 pe-0'>
+        <div class="card" style="width: 20rem;">
+          <img src="${meals.meals[i].strMealThumb}" class="card-img-top img" alt="...">
+          <div class="card-body text-black ">
+            <div class="title-like">
+              <h5 class="card-title"> ${meals.meals[i].strMeal}</h5>
+              <span id="like${idMeal}" class="ms-4 like">🖤${likes}</span>
+            </div>
+            <p class="card-text"> ${meals.meals[i].strCategory}</p>
+            <button id="${idMeal}" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              Details
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
   }
+  result.innerHTML = mealsHtml;
 };
 
 export default displayDom;
