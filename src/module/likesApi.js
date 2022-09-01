@@ -38,7 +38,7 @@ const likesApi = {
         body: JSON.stringify({
           item_id: id,
         }),
-      }
+      },
     );
     const response = await result.text();
     return response;
