@@ -38,7 +38,7 @@ const likesApi = {
         body: JSON.stringify({
           item_id: id,
         }),
-      },
+      }
     );
     const response = await result.text();
     return response;
@@ -46,24 +46,19 @@ const likesApi = {
 
   async getTotalMealLikes() {
     const response = await fetch(
-      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/q2EecIDolyiDguQmkFIj/likes/',
+      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/q2EecIDolyiDguQmkFIj/likes/'
     ).then((response) => response.json());
     const countLikes = response.reduce(
       (accumulator, current) => accumulator + current.likes,
-      0,
+      0
     );
     return countLikes;
   },
 
   countLikes(response) {
     const countLikes = response.reduce(
-<<<<<<< HEAD
       (accumulator, current) => accumulator + current,
       0
-=======
-      (accumulator, current) => accumulator + current.likes,
-      0,
->>>>>>> c192d501f0e338b31bcf125df2033cca71e31db2
     );
     return countLikes;
   },
