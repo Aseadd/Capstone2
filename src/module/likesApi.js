@@ -55,9 +55,9 @@ const likesApi = {
     return countLikes;
   },
 
-  async countLikes(response) {
+  countLikes(response) {
     const countLikes = response.reduce(
-      (accumulator, current) => accumulator + current.likes,
+      (accumulator, current) => accumulator + current,
       0
     );
     return countLikes;
