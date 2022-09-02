@@ -3,8 +3,10 @@ import './style.css';
 import displayDom from './module/displayDom.js';
 import modalMethods from './module/modal.js';
 import likesApi from './module/likesApi.js';
-// import commentApi from './module/commentApi.js';
+import image from './images/logo2.png';
+import sound from './audio/music.wav';
 
+const song = new Audio(sound);
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=a';
 displayDom(url);
 
@@ -21,7 +23,7 @@ allCards.addEventListener('click', (e) => {
       idMeal,
       imgSrc,
       title.firstElementChild.textContent,
-      category,
+      category
     );
     modalMethods.showComments(idMeal);
   }
@@ -39,8 +41,13 @@ allCards.addEventListener('click', (e) => {
   }
 });
 
-// const logo = document.querySelector('.logo');
-// const logoImg = document.createElement('img');
-// logoImg.setAttribute('src', './images/logo.svg');
-// logoImg.setAttribute('alt', 'logo');
-// logo.appendChild(logoImg);
+document.addEventListener('mousemove', () => {
+  song.play();
+});
+const logo = document.querySelector('.logo-img');
+const logoImg = document.createElement('img');
+const myIcon = new Image();
+myIcon.src = image;
+myIcon.style.width = '100px';
+myIcon.style.height = '50px';
+logo.appendChild(myIcon);
