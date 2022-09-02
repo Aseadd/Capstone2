@@ -38,9 +38,3 @@ allCards.addEventListener('click', (e) => {
     }
   }
 });
-
-// const logo = document.querySelector('.logo');
-// const logoImg = document.createElement('img');
-// logoImg.setAttribute('src', './images/logo.svg');
-// logoImg.setAttribute('alt', 'logo');
-// logo.appendChild(logoImg);
