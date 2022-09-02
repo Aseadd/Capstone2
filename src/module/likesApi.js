@@ -38,15 +38,20 @@ const likesApi = {
         body: JSON.stringify({
           item_id: id,
         }),
-      },
+      }
     );
     const response = await result.text();
     return response;
   },
 
   async getTotalMealLikes() {
-    const response = await fetch(url).then((response) => response.json());
-    response.reduce((accumulator, current) => accumulator + current.likes, 0);
+    const response = await fetch(
+      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/q2EecIDolyiDguQmkFIj/likes/'
+    ).then((response) => response.json());
+    const countLikes = response.reduce(
+      (accumulator, current) => accumulator + current.likes,
+      0
+    );
     return countLikes;
   },
 
