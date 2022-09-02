@@ -31,6 +31,11 @@ li {
   height: 40px;
 }
 
+.header-title {
+  color: aquamarine;
+  text-align: center;
+}
+
 .card {
   border-radius: 10px;
 }
@@ -71,4 +76,16 @@ li {
 
 .like:active {
   color: red;
+}
+
+.card-title {
+  font-size: 1rem;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1rem;
 }

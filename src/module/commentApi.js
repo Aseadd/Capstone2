@@ -1,12 +1,25 @@
 const commentApi = {
   async getComments(id) {
-    const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/MZ10RiH3HxYgVP46u10j/comments?item_id=${id}`;
-    const response = await fetch(url).then((response) => response.json());
-    const { comment } = await response.filter((e) => e.item_id === id)[0];
+    const idApi = 'MZ10RiH3HxYgVP46u10j';
+    const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${idApi}/comments?item_id=${id}`;
+    const response = await fetch(url);
+    const comment = await response.json();
     return comment;
   },
-  async addComment(id) {
-    return id;
+  async addComment(id, username, comment) {
+    const idApi = 'MZ10RiH3HxYgVP46u10j';
+    const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${idApi}/comments`;
+    const result = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        item_id: id,
+        username,
+        comment,
+      }),
+    });
+    const response = await result.text();
+    return response;
   },
 };
 
