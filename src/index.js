@@ -15,7 +15,8 @@ allCards.addEventListener('click', (e) => {
   if (text.trim() === 'Details') {
     const idMeal = e.target.id;
     const imgSrc = e.target.parentElement.parentElement.firstElementChild.src;
-    const title = e.target.previousElementSibling.previousElementSibling.firstElementChild;
+    const title =
+      e.target.previousElementSibling.previousElementSibling.firstElementChild;
     const category = e.target.previousElementSibling.textContent;
     modalMethods.show(idMeal, imgSrc, title.textContent, category);
     modalMethods.showComments(idMeal);
@@ -33,3 +34,9 @@ allCards.addEventListener('click', (e) => {
     }
   }
 });
+
+// const logo = document.querySelector('.logo');
+// const logoImg = document.createElement('img');
+// logoImg.setAttribute('src', './images/logo.svg');
+// logoImg.setAttribute('alt', 'logo');
+// logo.appendChild(logoImg);

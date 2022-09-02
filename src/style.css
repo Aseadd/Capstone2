@@ -8,6 +8,11 @@ body {
   background-color: #000;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23222' stroke-width='10' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
   font-family: 'Poppins', sans-serif;
+  max-width: 99%;
+}
+
+h1 {
+  font-size: 2rem;
 }
 
 h5 {
@@ -40,6 +45,10 @@ li {
   border-radius: 10px;
 }
 
+.col {
+  margin-top: 5px;
+}
+
 .title-like {
   display: grid;
   grid-template-columns: 75% 25%;
@@ -59,6 +68,10 @@ li {
   display: block;
   border-radius: 0;
   margin-bottom: 10px;
+}
+
+.modal-content {
+  border-radius: 15px;
 }
 
 .modalForm {
@@ -89,3 +102,25 @@ li {
 h3 {
   font-size: 1rem;
 }
+
+.commentSection {
+  width: 95%;
+  border: 1px solid #a76d60;
+  border-radius: 10px;
+}
+
+.comment {
+  width: 80vh;
+  height: 30px;
+  padding-top: 5px;
+  justify-content: center;
+}
+
+.badge {
+  height: 20px;
+  padding-top: 5px;
+  filter: contrast(100%);
+  background-color: #00a676;
+  justify-content: center;
+}
+
