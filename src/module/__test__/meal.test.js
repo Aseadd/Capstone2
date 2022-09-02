@@ -1,9 +1,8 @@
-import Meal from '../meal.js';
-
-const meal = new Meal();
-const c = meal.getCount();
-console.log(meal.getCount());
-
-describe('If Meal length is 4', () => {
-  expect(meal.getCount()).toEqual(4);
+test('Array [1,2,3,4] should return 6', () => {
+  const mockAPI = () => Promise.resolve({ items: [1, 2, 3, 4] });
+  mockAPI().then((result) => {
+    const mealArr = result.items;
+    const mealCounter = mealArr.length;
+    expect(mealCounter).toBe(4);
+  });
 });
