@@ -3,7 +3,9 @@ import './style.css';
 import displayDom from './module/displayDom.js';
 import modalMethods from './module/modal.js';
 import likesApi from './module/likesApi.js';
+import sound from './audio/musica.mp3';
 
+const song = new Audio(sound);
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=a';
 displayDom(url);
 
@@ -20,7 +22,7 @@ allCards.addEventListener('click', (e) => {
       idMeal,
       imgSrc,
       title.firstElementChild.textContent,
-      category,
+      category
     );
     modalMethods.showComments(idMeal);
   }
@@ -36,4 +38,8 @@ allCards.addEventListener('click', (e) => {
       likeSpan.classList.toggle('active');
     }
   }
+});
+
+document.addEventListener('mousemove', () => {
+  song.play();
 });
