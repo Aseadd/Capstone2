@@ -30,6 +30,9 @@ To get a local copy up and running follow these simple steps.
 - **Webpack:** Used as a bundle to compile JavaScript modules.
 - **Jest:** JavaScript Testing Framework.
 
+## 🎥 Video explaining the features of this project
+- [Loom Video]()
+
 ## 🌎 Live Demo:
 - [Capstone2](https://aseadd.github.io/Capstone2/dist/)
 
