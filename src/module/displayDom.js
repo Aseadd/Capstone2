@@ -4,11 +4,10 @@ import Meal from './meal.js';
 
 const displayDom = async (url) => {
   const result = document.querySelector('.row');
-  // const imgBackColor = document.querySelector('.img');
+
   const meals = await getMeals(url);
   const allLikes = await likesApi.getAllLikes();
-  // const mealList = JSON.parse(meals);
-  // console.log(meals);
+
   const mealCount = new Meal();
   mealCount.setCount(meals.meals.length);
   let mealsHtml = '';
@@ -17,9 +16,6 @@ const displayDom = async (url) => {
     const { likes } = allLikes.filter((e) => e.item_id === idMeal)[0] || {
       likes: 0,
     };
-    // const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    // imgBackColor.style.backgroundColor = '#' + randomColor;
-    // imgBackColor.innerHTML = '#' + randomColor;
     mealsHtml += ` 
       <div class='col mt-4 pe-0'>
         <div class="card" style="width: 19rem;">
