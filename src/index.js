@@ -21,7 +21,7 @@ allCards.addEventListener('click', (e) => {
       idMeal,
       imgSrc,
       title.firstElementChild.textContent,
-      category
+      category,
     );
     modalMethods.showComments(idMeal);
   }
