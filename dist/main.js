@@ -126,7 +126,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _module_displayDom_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./module/displayDom.js */ \"./src/module/displayDom.js\");\n/* harmony import */ var _module_modal_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./module/modal.js */ \"./src/module/modal.js\");\n/* harmony import */ var _module_likesApi_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./module/likesApi.js */ \"./src/module/likesApi.js\");\n// import _ from 'lodash';\n\n\n\n\n\nconst url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=a';\n(0,_module_displayDom_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(url);\n\nconst allCards = document.querySelector('#allCards');\nconst likeSpan = document.querySelector('like');\nallCards.addEventListener('click', (e) => {\n  const text = e.target.textContent;\n  if (text.trim() === 'Details') {\n    const idMeal = e.target.id;\n    const imgSrc = e.target.parentElement.parentElement.firstElementChild.src;\n    const title = e.target.previousElementSibling.previousElementSibling;\n    const category = e.target.previousElementSibling.textContent;\n    _module_modal_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"].show(\n      idMeal,\n      imgSrc,\n      title.firstElementChild.textContent,\n      category,\n    );\n    _module_modal_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"].showComments(idMeal);\n  }\n  if (text.includes('ღ')) {\n    // The next line has slice(4) to erase the word \"like\": id=\"like12345\" => 12345\n    const idMeal = e.target.id.slice(4);\n    _module_likesApi_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"].addLike(idMeal);\n    const span = document.getElementById(e.target.id);\n    if (span) {\n      const likes = Number(span.textContent.slice(1)) + 1;\n      span.textContent = `ღ  ${likes}`;\n      span.style.color = 'red';\n      likeSpan.classList.toggle('active');\n    }\n  }\n});\n\n\n//# sourceURL=webpack://webpack/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _module_displayDom_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./module/displayDom.js */ \"./src/module/displayDom.js\");\n/* harmony import */ var _module_modal_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./module/modal.js */ \"./src/module/modal.js\");\n/* harmony import */ var _module_likesApi_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./module/likesApi.js */ \"./src/module/likesApi.js\");\n/* harmony import */ var _audio_musica_mp3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./audio/musica.mp3 */ \"./src/audio/musica.mp3\");\n// import _ from 'lodash';\r\n\r\n\r\n\r\n\r\n\r\n\r\nconst song = new Audio(_audio_musica_mp3__WEBPACK_IMPORTED_MODULE_4__);\r\nconst url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=a';\r\n(0,_module_displayDom_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(url);\r\n\r\nconst allCards = document.querySelector('#allCards');\r\nconst likeSpan = document.querySelector('like');\r\nallCards.addEventListener('click', (e) => {\r\n  const text = e.target.textContent;\r\n  if (text.trim() === 'Details') {\r\n    const idMeal = e.target.id;\r\n    const imgSrc = e.target.parentElement.parentElement.firstElementChild.src;\r\n    const title = e.target.previousElementSibling.previousElementSibling;\r\n    const category = e.target.previousElementSibling.textContent;\r\n    _module_modal_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"].show(\r\n      idMeal,\r\n      imgSrc,\r\n      title.firstElementChild.textContent,\r\n      category\r\n    );\r\n    _module_modal_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"].showComments(idMeal);\r\n  }\r\n  if (text.includes('ღ')) {\r\n    // The next line has slice(4) to erase the word \"like\": id=\"like12345\" => 12345\r\n    const idMeal = e.target.id.slice(4);\r\n    _module_likesApi_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"].addLike(idMeal);\r\n    const span = document.getElementById(e.target.id);\r\n    if (span) {\r\n      const likes = Number(span.textContent.slice(1)) + 1;\r\n      span.textContent = `ღ  ${likes}`;\r\n      span.style.color = 'red';\r\n      likeSpan.classList.toggle('active');\r\n    }\r\n  }\r\n});\r\n\r\ndocument.addEventListener('mousemove', () => {\r\n  song.play();\r\n});\r\n\n\n//# sourceURL=webpack://webpack/./src/index.js?");
 
 /***/ }),
 
@@ -198,6 +198,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 eval("module.exports = \"data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27250%27 height=%2730%27 viewBox=%270 0 1000 120%27%3E%3Cg fill=%27none%27 stroke=%27%23222%27 stroke-width=%2710%27 %3E%3Cpath d=%27M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30%27/%3E%3Cpath d=%27M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30%27/%3E%3Cpath d=%27M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30%27/%3E%3Cpath d=%27M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30%27/%3E%3Cpath d=%27M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30%27/%3E%3Cpath d=%27M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30%27/%3E%3C/g%3E%3C/svg%3E\";\n\n//# sourceURL=webpack://webpack/data:image/svg+xml,%253Csvg_xmlns=%2527http://www.w3.org/2000/svg%2527_width=%2527250%2527_height=%252730%2527_viewBox=%25270_0_1000_120%2527%253E%253Cg_fill=%2527none%2527_stroke=%2527%2523222%2527_stroke-width=%252710%2527_%253E%253Cpath_d=%2527M-500_75c0_0_125-30_250-30S0_75_0_75s125_30_250_30s250-30_250-30s125-30_250-30s250_30_250_30s125_30_250_30s250-30_250-30%2527/%253E%253Cpath_d=%2527M-500_45c0_0_125-30_250-30S0_45_0_45s125_30_250_30s250-30_250-30s125-30_250-30s250_30_250_30s125_30_250_30s250-30_250-30%2527/%253E%253Cpath_d=%2527M-500_105c0_0_125-30_250-30S0_105_0_105s125_30_250_30s250-30_250-30s125-30_250-30s250_30_250_30s125_30_250_30s250-30_250-30%2527/%253E%253Cpath_d=%2527M-500_15c0_0_125-30_250-30S0_15_0_15s125_30_250_30s250-30_250-30s125-30_250-30s250_30_250_30s125_30_250_30s250-30_250-30%2527/%253E%253Cpath_d=%2527M-500-15c0_0_125-30_250-30S0-15_0-15s125_30_250_30s250-30_250-30s125-30_250-30s250_30_250_30s125_30_250_30s250-30_250-30%2527/%253E%253Cpath_d=%2527M-500_135c0_0_125-30_250-30S0_135_0_135s125_30_250_30s250-30_250-30s125-30_250-30s250_30_250_30s125_30_250_30s250-30_250-30%2527/%253E%253C/g%253E%253C/svg%253E?");
 
+/***/ }),
+
+/***/ "./src/audio/musica.mp3":
+/*!******************************!*\
+  !*** ./src/audio/musica.mp3 ***!
+  \******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"97878bc4fe8db1c3e007.mp3\";\n\n//# sourceURL=webpack://webpack/./src/audio/musica.mp3?");
+
 /***/ })
 
 /******/ 	});
@@ -254,6 +264,18 @@ eval("module.exports = \"data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/20
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -268,6 +290,26 @@ eval("module.exports = \"data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/20
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
