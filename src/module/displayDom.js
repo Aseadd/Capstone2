@@ -1,5 +1,6 @@
 import getMeals from './mealApi.js';
 import likesApi from './likesApi.js';
+import Meal from './meal.js';
 
 const displayDom = async (url) => {
   const result = document.querySelector('.row');
@@ -8,7 +9,8 @@ const displayDom = async (url) => {
   const allLikes = await likesApi.getAllLikes();
   // const mealList = JSON.parse(meals);
   // console.log(meals);
-
+  const mealCount = new Meal();
+  mealCount.setCount(meals.meals.length);
   let mealsHtml = '';
   for (let i = 0; i < meals.meals.length; i += 1) {
     const { idMeal } = meals.meals[i];
