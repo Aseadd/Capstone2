@@ -3,7 +3,6 @@ import './style.css';
 import displayDom from './module/displayDom.js';
 import modalMethods from './module/modal.js';
 import likesApi from './module/likesApi.js';
-// import commentApi from './module/commentApi.js';
 
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=a';
 displayDom(url);
