@@ -50,7 +50,7 @@ const likesApi = {
     ).then((response) => response.json());
     const countLikes = response.reduce(
       (accumulator, current) => accumulator + current.likes,
-      0
+      0,
     );
     return countLikes;
   },
