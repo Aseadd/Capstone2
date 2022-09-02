@@ -18,7 +18,7 @@ const modalMethods = {
           <img src="${src}" class="img modalImg" alt="Meal Image">
           <form id="form${id}" method="post" class='modalForm mt-2'>
             <h3>${category}</h3>
-            <p>Your comment will be the number <span id="commentCount" class="badge rounded-pill bg-info text-dark"></span></p>
+            <p>Comented <span id="commentCount" class="badge rounded-pill bg-info text-dark"></span> times</p>
             <div class='justify-content-center input-group-sm'>
               <input class="form-control formInput" type="text" placeholder="Your name" name="name" id="nameMealID" required>
               <textarea class="form-control formInput mt-2" type="text" placeholder="Your comment" name="comment" id="commentMealID" required></textarea>
@@ -77,6 +77,12 @@ const modalMethods = {
     const commentCount = document.querySelector('#commentCount');
     const nextCount = allComments.length || 0;
     commentCount.textContent = nextCount;
+  },
+
+  countComments() {
+    const comments = document.querySelector('.commentSection').children;
+    const nextCount = comments.length || 1;
+    return nextCount;
   },
 };
 
