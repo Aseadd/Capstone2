@@ -16,9 +16,9 @@ const modalMethods = {
         </div>
         <div class="modal-body">
           <img src="${src}" class="img modalImg" alt="Meal Image">
-          <form id="form${id}" method="get" class='modalForm mt-2'>
+          <form id="form${id}" method="post" class='modalForm mt-2'>
             <h3>${category}</h3>
-            <p>Your comment will be the number <span class="badge rounded-pill bg-info text-dark">32</span></p>
+            <p>Your comment will be the number <span id="commentCount" class="badge rounded-pill bg-info text-dark"></span></p>
             <div class='justify-content-center input-group-sm'>
               <input class="form-control formInput" type="text" placeholder="Your name" name="name" id="nameMealID" required>
               <textarea class="form-control formInput mt-2" type="text" placeholder="Your comment" name="comment" id="commentMealID" required></textarea>
@@ -28,26 +28,55 @@ const modalMethods = {
               <input type="submit" value="Comment" class="submit btn btn-primary float-end" id="submit">
             </div>
           </form>
-          <div class="commentSection">
-            <p><span class="badge rounded-pill bg-dark">Addis Tsega 21/08/2022:</span> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt fugit magnam laudantium perspiciatis impedit officiis! Modi quisquam ratione corrupti quaerat? Fugiat perspiciatis nulla cumque autem a nesciunt quidem placeat doloremque!</p>
-          </div>
+          <div class="commentSection"></div>
         </div>
       </div>
     `;
     modal.appendChild(allContent);
+
+    // Event listener to add comments
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const username = document.querySelector('#nameMealID').value;
+      const comment = document.querySelector('#commentMealID').value;
+      commentApi.addComment(id, username, comment);
+
+      const date = new Date();
+      const creationDate = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+
+      const commentHtml = document.createElement('p');
+      commentHtml.innerHTML = `<span class="badge rounded-pill bg-dark">${username} ${creationDate}:</span> ${comment}`;
+
+      const commentList = document.querySelector('.commentSection');
+      commentList.appendChild(commentHtml);
+
+      const commentCount = document.querySelector('#commentCount');
+      const nextCount = Number(commentCount.textContent) + 1;
+      commentCount.textContent = nextCount;
+
+      form.reset();
+    });
   },
 
-  async showComment(id) {
-    const commentList = document.querySelector('.commentSection');
+  async showComments(id) {
     const allComments = await commentApi.getComments(id);
-    const commentHtml = '';
+    const commentList = document.querySelector('.commentSection');
 
-    for (let i = 0; i < allComments.length; i += 1) {
-      const idMeal1 = id.idMeal;
-      const comments1 = allComments.filter((e) => e.item_id === idMeal1)[0].comments;
-      commentHtml.innerHTML = ` <p><span class="badge rounded-pill bg-dark">Addis Tsega 21/08/2022:</span>${comments1} </p>`;
+    const commentHtml = document.createElement('div');
+    commentHtml.innerHTML = '';
+    if (!allComments.error) {
+      for (let i = 0; i < allComments.length; i += 1) {
+        const { username, comment } = allComments[i];
+        const creationDate = allComments[i].creation_date;
+        commentHtml.innerHTML += `<p><span class="badge rounded-pill bg-dark">${username} ${creationDate}:</span> ${comment}</p>`;
+        commentList.appendChild(commentHtml);
+      }
     }
-    commentList.appendChild(commentHtml);
+
+    const commentCount = document.querySelector('#commentCount');
+    const nextCount = allComments.length || 1;
+    commentCount.textContent = nextCount;
   },
 };
 

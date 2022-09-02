@@ -18,24 +18,18 @@ allCards.addEventListener('click', (e) => {
     const title = e.target.previousElementSibling.previousElementSibling.firstElementChild;
     const category = e.target.previousElementSibling.textContent;
     modalMethods.show(idMeal, imgSrc, title.textContent, category);
-    modalMethods.showComment(idMeal);
+    modalMethods.showComments(idMeal);
   }
   if (text.includes('ღ')) {
     // The next line has slice(4) to erase the word "like": id="like12345" => 12345
     const idMeal = e.target.id.slice(4);
     likesApi.addLike(idMeal);
     const span = document.getElementById(e.target.id);
-    const likes = Number(span.textContent.slice(1)) + 1;
-    span.textContent = `ღ  ${likes}`;
-    span.style.color = 'red';
-    likeSpan.classList.toggle('active');
+    if (span) {
+      const likes = Number(span.textContent.slice(1)) + 1;
+      span.textContent = `ღ  ${likes}`;
+      span.style.color = 'red';
+      likeSpan.classList.toggle('active');
+    }
   }
-});
-
-const form = document.querySelector('form');
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  console.log('hello');
-  console.log(e.target);
-  // commentsApi.addComments(id, nameValue, commentValue);
 });
