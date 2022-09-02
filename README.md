@@ -39,6 +39,7 @@ To get a local copy up and running follow these simple steps.
 - Twitter: [@marcooquendoc](https://twitter.com/marcooquendoc)
 - LinkedIn: [Marco Vinicio Oquendo](https://www.linkedin.com/in/vinicio-oquendo-4a289156/)
 
+### 👤 Addis Tsega
 - GitHub: [@Aseadd](https://github.com/Aseadd)
 - Twitter: [@AdaTsega](https://twitter.com/AdaTsega)
 - LinkedIn: [Addis Tsega](https://www.linkedin.com/in/addis-tsega-422789195/)
