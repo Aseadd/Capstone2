@@ -75,7 +75,7 @@ const modalMethods = {
     }
 
     const commentCount = document.querySelector('#commentCount');
-    const nextCount = allComments.length || 1;
+    const nextCount = allComments.length || 0;
     commentCount.textContent = nextCount;
   },
 };

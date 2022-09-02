@@ -1,8 +1,13 @@
-test('Array [1,2,3,4] should return 6', () => {
-  const mockAPI = () => Promise.resolve({ items: [1, 2, 3, 4] });
-  mockAPI().then((result) => {
-    const mealArr = result.items;
-    const mealCounter = mealArr.length;
-    expect(mealCounter).toBe(4);
+import Meal from '../meal.js';
+
+const m = new Meal();
+describe('Test the likes', () => {
+  test('true true', () => {
+    expect(true).toBe(true);
+  });
+  test('setCount(5)  should return 5', () => {
+    m.setCount(5);
+    const likes = m.getCount();
+    expect(likes).toBe(5);
   });
 });
