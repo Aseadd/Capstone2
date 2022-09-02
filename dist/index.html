@@ -17,15 +17,17 @@
 <body>
   <header>
     <nav class='pt-3 pb-3 nav-bar'>
-      <img src="images/food-logo.jpg" alt="logo">
       <ul class="nav nav-pills justify-content-center">
+        <li class="me-auto">
+          <a class="nav-link" aria-current="page" href="#"> <img src="https://www.themealdb.com/images/ingredients/Lime.png" alt="logo" class='logo-img'></a>
+        </li>
         <li class="nav-item pe-5">
           <a id ='count-likes' class="nav-link active" aria-current="page" href="#">Meals </a>
         </li>
         <li class="nav-item pe-5">
           <a class="nav-link text-white" href="#">Search</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item pe-5">
           <a class="nav-link text-white" href="#">Order</a>
         </li>
       </ul>
@@ -45,7 +47,7 @@
           </div>
           <div class="modal-body">
             <img src="https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg" class="img modalImg" alt="Meal Image">
-            <form id="formIdNumber" method="get" class='modalForm mt-2'>
+            <form id="formIdNumber" method="post" class='modalForm mt-2'>
               <p>Your comment will be the number <span class="badge rounded-pill bg-info text-dark">32</span></p>
               <div class='justify-content-center input-group-sm'>
                 <input class="form-control formInput" type="text" placeholder="Your name" name="name" id="nameMealID" required>
