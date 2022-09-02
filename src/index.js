@@ -15,9 +15,14 @@ allCards.addEventListener('click', (e) => {
   if (text.trim() === 'Details') {
     const idMeal = e.target.id;
     const imgSrc = e.target.parentElement.parentElement.firstElementChild.src;
-    const title = e.target.previousElementSibling.previousElementSibling.firstElementChild;
+    const title = e.target.previousElementSibling.previousElementSibling;
     const category = e.target.previousElementSibling.textContent;
-    modalMethods.show(idMeal, imgSrc, title.textContent, category);
+    modalMethods.show(
+      idMeal,
+      imgSrc,
+      title.firstElementChild.textContent,
+      category,
+    );
     modalMethods.showComments(idMeal);
   }
   if (text.includes('ღ')) {
@@ -33,3 +38,9 @@ allCards.addEventListener('click', (e) => {
     }
   }
 });
+
+// const logo = document.querySelector('.logo');
+// const logoImg = document.createElement('img');
+// logoImg.setAttribute('src', './images/logo.svg');
+// logoImg.setAttribute('alt', 'logo');
+// logo.appendChild(logoImg);
