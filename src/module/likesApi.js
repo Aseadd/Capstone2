@@ -44,23 +44,19 @@ const likesApi = {
     return response;
   },
 
-  //   async getTotalMealLikes() {
-  //     // eslint-disable-next-line
-  //     const url =
-  //       'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/MZ10RiH3HxYgVP46u10j/likes';
-  //     const response = await fetch(url).then((response) => response.json());
-  //     // console.log(
-  //     //   response.reduce((accumulator, current) => accumulator + current.likes, 0)
-  //     // );
+  async getTotalMealLikes() {
+    const response = await fetch(url).then((response) => response.json());
+    response.reduce((accumulator, current) => accumulator + current.likes, 0);
+    return countLikes;
+  },
 
-  //     console.log(countLike);
-  //     let countLikes = 0;
-  //     for (let i = 2; i < response.length; i += 1) {
-  //       countLikes += response[i].likes;
-  //     }
-  //     // console.log(countLikes);
-  //     return countLikes;
-  //   },
+  async countLikes(response) {
+    const countLikes = response.reduce(
+      (accumulator, current) => accumulator + current.likes,
+      0
+    );
+    return countLikes;
+  },
 };
 
 export default likesApi;
