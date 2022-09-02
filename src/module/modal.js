@@ -46,7 +46,7 @@ const modalMethods = {
       const creationDate = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
 
       const commentHtml = document.createElement('p');
-      commentHtml.innerHTML = `<span class="badge rounded-pill bg-dark">${username} ${creationDate}:</span> ${comment}`;
+      commentHtml.innerHTML = `<span class="badge rounded-pill">${username} ${creationDate}:</span> ${comment}`;
 
       const commentList = document.querySelector('.commentSection');
       commentList.appendChild(commentHtml);
@@ -69,7 +69,7 @@ const modalMethods = {
       for (let i = 0; i < allComments.length; i += 1) {
         const { username, comment } = allComments[i];
         const creationDate = allComments[i].creation_date;
-        commentHtml.innerHTML += `<p><span class="badge rounded-pill bg-dark">${username} ${creationDate}:</span> ${comment}</p>`;
+        commentHtml.innerHTML += `<p class= 'comment'><span class="badge rounded-pill">${username} ${creationDate}:</span> ${comment}</p>`;
         commentList.appendChild(commentHtml);
       }
     }

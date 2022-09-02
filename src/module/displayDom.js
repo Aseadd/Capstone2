@@ -20,7 +20,7 @@ const displayDom = async (url) => {
     // imgBackColor.innerHTML = '#' + randomColor;
     mealsHtml += ` 
       <div class='col mt-4 pe-0'>
-        <div class="card" style="width: 20rem;">
+        <div class="card" style="width: 19rem;">
           <img src="${meals.meals[i].strMealThumb}" class="card-img-top img" alt="...">
           <div class="card-body text-black ">
             <div class="title-like">
