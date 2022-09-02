@@ -31,7 +31,7 @@ To get a local copy up and running follow these simple steps.
 - **Jest:** JavaScript Testing Framework.
 
 ## 🎥 Video explaining the features of this project
-- [Loom Video]()
+- [Loom Video](https://www.loom.com/share/c1d7e50efc0840bd985c365737bb34c0)
 
 ## 🌎 Live Demo:
 - [Capstone2](https://aseadd.github.io/Capstone2/dist/)
