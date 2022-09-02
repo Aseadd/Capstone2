@@ -6,6 +6,7 @@ class Meal {
   getCount() {
     return this.count;
   }
+
   setCount(amount) {
     this.count = amount;
   }
