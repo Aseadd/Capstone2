@@ -1,11 +1,17 @@
 import commentApi from './commentApi.js';
+import getMeals from './mealApi.js';
 
 const modalMethods = {
-  async show(id, src, mealName, category) {
-    // const meals = await getMeals(url);
-
+  async show(idMeal) {
     const modal = document.querySelector('#staticBackdrop');
     modal.innerHTML = '';
+
+    const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`;
+    const meals = await getMeals(url);
+    const src = await meals.meals[0].strMealThumb;
+    const mealName = await meals.meals[0].strMeal;
+    const category = await meals.meals[0].strCategory;
+
     const allContent = document.createElement('div');
     allContent.classList.add('modal-dialog');
     allContent.innerHTML = `
@@ -16,7 +22,7 @@ const modalMethods = {
         </div>
         <div class="modal-body">
           <img src="${src}" class="img modalImg" alt="Meal Image">
-          <form id="form${id}" method="post" class='modalForm mt-2'>
+          <form id="form${idMeal}" method="post" class='modalForm mt-2'>
             <h3>${category}</h3>
             <p>Comented <span id="commentCount" class="badge rounded-pill bg-info text-dark"></span> times</p>
             <div class='justify-content-center input-group-sm'>
@@ -40,7 +46,7 @@ const modalMethods = {
       e.preventDefault();
       const username = document.querySelector('#nameMealID').value;
       const comment = document.querySelector('#commentMealID').value;
-      commentApi.addComment(id, username, comment);
+      commentApi.addComment(idMeal, username, comment);
 
       const date = new Date();
       const creationDate = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
@@ -59,8 +65,8 @@ const modalMethods = {
     });
   },
 
-  async showComments(id) {
-    const allComments = await commentApi.getComments(id);
+  async showComments(idMeal) {
+    const allComments = await commentApi.getComments(idMeal);
     const commentList = document.querySelector('.commentSection');
 
     const commentHtml = document.createElement('div');

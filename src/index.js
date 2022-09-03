@@ -15,15 +15,7 @@ allCards.addEventListener('click', (e) => {
   const text = e.target.textContent;
   if (text.trim() === 'Details') {
     const idMeal = e.target.id;
-    const imgSrc = e.target.parentElement.parentElement.firstElementChild.src;
-    const title = e.target.previousElementSibling.previousElementSibling;
-    const category = e.target.previousElementSibling.textContent;
-    modalMethods.show(
-      idMeal,
-      imgSrc,
-      title.firstElementChild.textContent,
-      category,
-    );
+    modalMethods.show(idMeal);
     modalMethods.showComments(idMeal);
   }
   if (text.includes('ღ')) {
@@ -40,6 +32,6 @@ allCards.addEventListener('click', (e) => {
   }
 });
 
-document.addEventListener('mousemove', () => {
+document.addEventListener('DOMContentLoaded', () => {
   song.play();
 });
