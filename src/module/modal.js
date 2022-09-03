@@ -1,9 +1,17 @@
 import commentApi from './commentApi.js';
+import getMeals from './mealApi.js';
 
 const modalMethods = {
   async show(id, src, mealName, category) {
-    // const meals = await getMeals(url);
-
+    const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=a';
+    const meals = await getMeals(url);
+    let instruction = '';
+    for (let i = 0; i < meals.meals.length; i += 1) {
+      const { idMeal } = meals.meals[i];
+      if (idMeal === id) {
+        instruction = meals.meals[i].strInstructions;
+      }
+    }
     const modal = document.querySelector('#staticBackdrop');
     modal.innerHTML = '';
     const allContent = document.createElement('div');
@@ -17,7 +25,11 @@ const modalMethods = {
         <div class="modal-body">
           <img src="${src}" class="img modalImg" alt="Meal Image">
           <form id="form${id}" method="post" class='modalForm mt-2'>
-            <h3>${category}</h3>
+            <h3>Category : ${category}</h3>
+            <div class="recipe">
+            <h4>Recipe</h4>
+            <h5>${instruction}</h5>
+            </div>
             <p>Comented <span id="commentCount" class="badge rounded-pill bg-info text-dark"></span> times</p>
             <div class='justify-content-center input-group-sm'>
               <input class="form-control formInput" type="text" placeholder="Your name" name="name" id="nameMealID" required>
