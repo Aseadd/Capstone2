@@ -121,6 +121,13 @@ h3 {
   border-radius: 10px;
 }
 
+#commentCount {
+  color: #101820ff;
+  background: #f2aa4cff;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
 .comment {
   width: 80vh;
   height: 30px;

@@ -30,7 +30,7 @@ const modalMethods = {
             <h4>Recipe</h4>
             <h5>${instruction}</h5>
             </div>
-            <p>Comented <span id="commentCount" class="badge rounded-pill bg-info text-dark"></span> times</p>
+            <p>Comented <span id="commentCount" class="badge rounded-pill">0</span> times</p>
             <div class='justify-content-center input-group-sm'>
               <input class="form-control formInput" type="text" placeholder="Your name" name="name" id="nameMealID" required>
               <textarea class="form-control formInput mt-2" type="text" placeholder="Your comment" name="comment" id="commentMealID" required></textarea>
