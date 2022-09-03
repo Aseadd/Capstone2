@@ -35,7 +35,6 @@ const displayDom = async (url) => {
     `;
   }
   result.innerHTML = mealsHtml;
-
   const countMeals = document.querySelector('#count-likes');
   countMeals.textContent += `(${meals.meals.length} )`;
 };
