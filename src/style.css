@@ -15,8 +15,19 @@ h1 {
   font-size: 2rem;
 }
 
-h5 {
+h4 {
   font-size: 1rem;
+  font-weight: bold;
+  color: #af1b3f;
+  padding-left: 5px;
+  text-decoration: underline;
+}
+
+h5 {
+  font-size: 0.75rem;
+  text-align: justify;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 p {
@@ -110,6 +121,13 @@ h3 {
   border-radius: 10px;
 }
 
+#commentCount {
+  color: #101820ff;
+  background: #f2aa4cff;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
 .comment {
   width: 80vh;
   height: 30px;
@@ -123,4 +141,15 @@ h3 {
   filter: contrast(100%);
   background-color: #00a676;
   justify-content: center;
+}
+
+.recipe {
+  border: 1px solid #20a39e;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.tag {
+  border: 1px solid #20a39e;
+  border-radius: 10px;
 }
