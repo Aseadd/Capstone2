@@ -6,10 +6,30 @@ const modalMethods = {
     const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=a';
     const meals = await getMeals(url);
     let instruction = '';
+    let location = '';
+    let ingriedent1 = '';
+    let ingriedent2 = '';
+    let ingriedent3 = '';
+    let ingriedent4 = '';
+    let ingriedent5 = '';
+    let ingriedent6 = '';
+    let ingriedent7 = '';
+    let ingriedent8 = '';
+    let ingriedent9 = '';
     for (let i = 0; i < meals.meals.length; i += 1) {
       const { idMeal } = meals.meals[i];
       if (idMeal === id) {
         instruction = meals.meals[i].strInstructions;
+        location = meals.meals[i].strArea;
+        ingriedent1 = meals.meals[i].strIngredient1;
+        ingriedent2 = meals.meals[i].strIngriedent2;
+        ingriedent3 = meals.meals[i].strIngredient3;
+        ingriedent4 = meals.meals[i].strIngredient4;
+        ingriedent5 = meals.meals[i].strIngredient5;
+        ingriedent6 = meals.meals[i].strIngredient6;
+        ingriedent7 = meals.meals[i].strIngredient7;
+        ingriedent8 = meals.meals[i].strIngredient8;
+        ingriedent9 = meals.meals[i].strIngredient9;
       }
     }
     const modal = document.querySelector('#staticBackdrop');
@@ -29,6 +49,14 @@ const modalMethods = {
             <div class="recipe">
             <h4>Recipe</h4>
             <h5>${instruction}</h5>
+            </div>
+            <div class="recipe">
+            <h4>Area/Country</h4>
+            <h5>${location}</h5>
+            </div>
+            <div class="recipe">
+            <h4>Area/Country</h4>
+            <h5>${ingriedent1}, ${ingriedent2}, ${ingriedent3}, ${ingriedent4}, ${ingriedent5}, ${ingriedent6}, ${ingriedent7}, ${ingriedent8} and ${ingriedent9}</h5>
             </div>
             <p>Comented <span id="commentCount" class="badge rounded-pill">0</span> times</p>
             <div class='justify-content-center input-group-sm'>
