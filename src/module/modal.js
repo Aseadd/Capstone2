@@ -55,7 +55,7 @@ const modalMethods = {
             <h5>${location}</h5>
             </div>
             <div class="recipe">
-            <h4>Area/Country</h4>
+            <h4>Ingredients</h4>
             <h5>${ingriedent1}, ${ingriedent2}, ${ingriedent3}, ${ingriedent4}, ${ingriedent5}, ${ingriedent6}, ${ingriedent7}, ${ingriedent8} and ${ingriedent9}</h5>
             </div>
             <p>Comented <span id="commentCount" class="badge rounded-pill">0</span> times</p>
